@@ -1,0 +1,30 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "weather app",
+  "private": true,
+  "main": "webpack.config.js",
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch",
+    "scss": "node-sass -w src/scss -o src/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwinmoradian90/weather_app.git"
+  },
+  "author": "edwin moradian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwinmoradian90/weather_app/issues"
+  },
+  "homepage": "https://github.com/edwinmoradian90/weather_app#readme"
+}
