@@ -1,5 +1,5 @@
 $light_purple: rgb(142, 130, 211);
-$grad: linear-gradient(75deg, lightseagreen, $light_purple );
+$grad: linear-gradient(75deg, lightseagreen, $light_purple);
 
 *,
 *::before,
@@ -17,6 +17,16 @@ $grad: linear-gradient(75deg, lightseagreen, $light_purple );
     justify-content: center;
     background: url('../images/mountains.jpg');
     background-size: cover;
+}
+
+.title {
+    background: rgba(0, 0, 0, 0.178);
+    border-radius: 5px;
+    color: white;
+    font-size: 2em;
+    padding: 20px;
+    position: absolute;
+    top: 20%;
 }
 
 .input_container {

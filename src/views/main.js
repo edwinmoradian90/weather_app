@@ -4,6 +4,10 @@ function mainView() {
     const mainContainer = document.createElement('div');
     mainContainer.classList.add('main_container');
 
+    const title = document.createElement('h2');
+    title.classList.add('title');
+    title.innerText = 'Weather App';
+
     const inputContainer = document.createElement('div');
     inputContainer.classList.add('input_container');
 
@@ -18,6 +22,7 @@ function mainView() {
 
     inputContainer.appendChild(input);
     inputContainer.appendChild(submit);
+    mainContainer.appendChild(title);
     mainContainer.appendChild(inputContainer);
     content.appendChild(mainContainer);
 }
