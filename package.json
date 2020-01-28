@@ -15,7 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --watch",
-    "scss": "node-sass -w src/scss -o src/css"
+    "scss": "node-sass -w src/assets/scss -o src/assets/css"
   },
   "repository": {
     "type": "git",
