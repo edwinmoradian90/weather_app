@@ -1,5 +1,5 @@
-$light_purple: rgb(142, 130, 211);
-$grad: linear-gradient(75deg, lightseagreen, $light_purple);
+$light_purple: rgba(142, 130, 211, 0.8);
+$grad: linear-gradient(75deg, rgba(32, 178, 171, 0.8), $light_purple);
 
 *,
 *::before,
@@ -20,11 +20,11 @@ $grad: linear-gradient(75deg, lightseagreen, $light_purple);
 }
 
 .title {
-    background: rgba(0, 0, 0, 0.178);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     color: white;
     font-size: 2em;
-    padding: 20px;
+    padding: 40px;
     position: absolute;
     top: 20%;
 }
@@ -43,6 +43,9 @@ $grad: linear-gradient(75deg, lightseagreen, $light_purple);
     border-radius: 5px;
     color: grey;
     padding: 10px;
+    &:focus {
+        border: 2px solid $light_purple;
+    }
 }
 
 .submit_button {
@@ -51,9 +54,10 @@ $grad: linear-gradient(75deg, lightseagreen, $light_purple);
     color: white;
     margin-left: 30px;
     padding: 20px;
+    transition: .5s;
     background: $grad;
     &:hover {
-        background: lightskyblue;
+        box-shadow: 2px 4px rgba(255, 255, 255, 0.3);
         cursor: pointer;
     }
 }

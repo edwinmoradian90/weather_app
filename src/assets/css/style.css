@@ -15,11 +15,11 @@
   background-size: cover; }
 
 .title {
-  background: rgba(0, 0, 0, 0.178);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   color: white;
   font-size: 2em;
-  padding: 20px;
+  padding: 40px;
   position: absolute;
   top: 20%; }
 
@@ -36,6 +36,8 @@
   border-radius: 5px;
   color: grey;
   padding: 10px; }
+  .input:focus {
+    border: 2px solid rgba(142, 130, 211, 0.8); }
 
 .submit_button {
   border: 0;
@@ -43,9 +45,10 @@
   color: white;
   margin-left: 30px;
   padding: 20px;
-  background: linear-gradient(75deg, lightseagreen, #8e82d3); }
+  transition: .5s;
+  background: linear-gradient(75deg, rgba(32, 178, 171, 0.8), rgba(142, 130, 211, 0.8)); }
   .submit_button:hover {
-    background: lightskyblue;
+    box-shadow: 2px 4px rgba(255, 255, 255, 0.3);
     cursor: pointer; }
 
 .view_container {
@@ -67,22 +70,22 @@
   border-top: 1px solid rgba(32, 178, 171, 0.205);
   padding: 17px; }
   .weather_item > h3 {
-    background: linear-gradient(75deg, lightseagreen, #8e82d3);
+    background: linear-gradient(75deg, rgba(32, 178, 171, 0.8), rgba(142, 130, 211, 0.8));
     border-radius: 5px;
     color: white;
     padding: 10px; }
   .weather_item > span {
-    color: #8e82d3;
+    color: rgba(142, 130, 211, 0.8);
     display: block;
     margin-top: 10px;
     padding: 10px; }
 
 .new_search_button {
-  background: linear-gradient(75deg, lightseagreen, #8e82d3);
+  background: linear-gradient(75deg, rgba(32, 178, 171, 0.8), rgba(142, 130, 211, 0.8));
   border-radius: 10px;
   color: white;
   padding: 20px;
   transition: .3s; }
   .new_search_button:hover {
-    box-shadow: 2px 2px 2px #8e82d3;
+    box-shadow: 2px 2px 2px rgba(142, 130, 211, 0.8);
     cursor: pointer; }
