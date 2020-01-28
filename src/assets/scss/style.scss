@@ -1,5 +1,5 @@
 $light_purple: rgba(142, 130, 211, 0.8);
-$grad: linear-gradient(75deg, rgba(32, 178, 171, 0.8), $light_purple);
+$grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
 
 *,
 *::before,
@@ -24,7 +24,7 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.8), $light_purple);
     border-radius: 5px;
     color: white;
     font-size: 2em;
-    padding: 40px;
+    padding: 20px 60px;
     position: absolute;
     top: 20%;
 }
@@ -39,6 +39,7 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.8), $light_purple);
 }
 
 .input {
+    background: rgba(255, 255, 255, 0.85);
     border: 0;
     border-radius: 5px;
     color: grey;
