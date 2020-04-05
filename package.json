@@ -13,11 +13,12 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --watch",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
     "scss": "node-sass -w src/assets/scss -o src/assets/css"
   },
   "repository": {
