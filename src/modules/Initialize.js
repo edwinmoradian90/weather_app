@@ -41,7 +41,6 @@ class Initialize {
         this.loadPage();
       } else
       if (e.target.matches('.toggle_units')) {
-        console.log('convert units');
         this.weather.resetPage();
         this.weather.toggleUnits();
         this.weather.render();

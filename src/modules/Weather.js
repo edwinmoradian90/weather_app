@@ -50,7 +50,6 @@ class Weather {
         this.gif = gifs.hot;
       }
     }
-    console.log(this.gif, typeof this.gif);
   }
 
   getInputValue() {
@@ -117,7 +116,6 @@ class Weather {
           unit: this.unit,
           gif: this.gif,
         };
-        console.log(weather);
         weatherView(weather);
       }).catch((err) => {
         this.resetPage();
