@@ -64,9 +64,9 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
 }
 
 .view_container {
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.712);
     border-radius: 10px;
-    height: 400px;
+    height: auto;
     padding: 20px;
     width: 400px;
 }
@@ -97,9 +97,21 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
     }
 }
 
+.location_container {
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.gif_container {
+    max-width: 40px;
+    height: 40px;
+    margin-right: 100px;
+}
 .button_container {
     display: flex;
-    margin-top: 100px;
+    margin-top: 50px;
     justify-content: space-around;
 }
 

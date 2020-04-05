@@ -2,6 +2,7 @@
 /* eslint-disable class-methods-use-this */
 import weatherView from '../views/weatherView';
 import mainView from '../views/main';
+import gifs from '../assets/images/gifs';
 
 class Weather {
   constructor() {
@@ -20,6 +21,7 @@ class Weather {
     this.temp = 0;
     this.tempMin = 0;
     this.tempMax = 0;
+    this.gif = '';
   }
 
   resetPage() {
@@ -29,8 +31,26 @@ class Weather {
     }
   }
 
-  imagePicker() {
-
+  gifPicker() {
+    if (this.isCelsius) {
+      if (this.temp <= 0) {
+        this.gif = gifs.cold;
+      } else if (this.temp > 0 && this.temp < 25) {
+        this.gif = gifs.medium;
+      } else {
+        this.gif = gifs.hot;
+      }
+    } else
+    if (!this.isCelsius) {
+      if (this.temp <= 32) {
+        this.gif = gifs.cold;
+      } else if (this.temp > 32 && this.temp < 77) {
+        this.gif = gifs.medium;
+      } else {
+        this.gif = gifs.hot;
+      }
+    }
+    console.log(this.gif, typeof this.gif);
   }
 
   getInputValue() {
@@ -48,15 +68,16 @@ class Weather {
   toC(temps) {
     const newTemp = temps.map((temp) => Math.floor(temp - 273));
     [this.temp, this.tempMin, this.tempMax] = newTemp;
+    this.gifPicker();
   }
 
   toF(temps) {
     const newTemp = temps.map((temp) => Math.floor(((temp - 273) * (9 / 5)) + 32));
     [this.temp, this.tempMin, this.tempMax] = newTemp;
+    this.gifPicker();
   }
 
   convertUnits(data) {
-    console.log(data);
     const { temp, temp_min, temp_max } = data.main;
     const info = [temp, temp_min, temp_max];
     return this.isCelsius ? this.toC(info) : this.toF(info);
@@ -94,7 +115,9 @@ class Weather {
           maxTemp: this.tempMax,
           minTemp: this.tempMin,
           unit: this.unit,
+          gif: this.gif,
         };
+        console.log(weather);
         weatherView(weather);
       }).catch((err) => {
         this.resetPage();

@@ -20,33 +20,38 @@ function weatherView(weather) {
 
   const weatherInfo = `
     <div class='location_container'>
-      <h2 class='location'>
-        ${weather.city}, ${weather.country}
-      </h2>
-      <h3 class='weather_type'>
-        ${weather.type}
-      </h3>
-      <div class='current_temp_container'>
-        <h1 class='current_temp'>
-        ${weather.temp}
-          <span>
-            ${weather.unit}
-          </span>
-        </h1>
+      <div class='content_wrapper'>
+        <h2 class='location'>
+          ${weather.city}, ${weather.country}
+        </h2>
+        <h3 class='weather_type'>
+          ${weather.type}
+        </h3>
+        <div class='current_temp_container'>
+          <h1 class='current_temp'>
+          ${weather.temp}
+            <span>
+              ${weather.unit}
+            </span>
+          </h1>
+        </div>
+        <div class='min_max_container'>
+          <h3 class='min_temp'>
+            Min: ${weather.minTemp}
+            <span>
+              ${weather.unit}
+            </span>
+          </h3>
+          <h3 class='max_temp'>
+            Max: ${weather.maxTemp} 
+            <span>
+              ${weather.unit}
+            </span>
+          </h3>
+        </div>
       </div>
-      <div class='min_max_container'>
-        <h3 class='min_temp'>
-          Min: ${weather.minTemp}
-          <span>
-            ${weather.unit}
-          </span>
-        </h3>
-        <h3 class='max_temp'>
-          Max: ${weather.maxTemp} 
-          <span>
-            ${weather.unit}
-          </span>
-        </h3>
+      <div class='gif_container'>
+        ${weather.gif}
       </div>
     </div>
   `;
