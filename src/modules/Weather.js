@@ -24,8 +24,8 @@ class Weather {
     this.gif = '';
   }
 
-  resetPage() {
-    const content = document.querySelector('.main_container');
+  resetPage(page) {
+    const content = document.querySelector(page);
     while (content.firstChild) {
       content.removeChild(content.firstChild);
     }
@@ -40,8 +40,7 @@ class Weather {
       } else {
         this.gif = gifs.hot;
       }
-    } else
-    if (!this.isCelsius) {
+    } else if (!this.isCelsius) {
       if (this.temp <= 32) {
         this.gif = gifs.cold;
       } else if (this.temp > 32 && this.temp < 77) {
@@ -118,8 +117,8 @@ class Weather {
         };
         weatherView(weather);
       }).catch((err) => {
-        this.resetPage();
-        mainView();
+        this.resetPage('#content');
+        mainView({ error: true });
         throw new Error(err);
       });
   }

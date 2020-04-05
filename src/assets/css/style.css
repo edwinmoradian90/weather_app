@@ -12,10 +12,11 @@
   align-items: center;
   justify-content: center;
   background: url("../images/mountains.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
 
 .title {
-  background: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   color: white;
   font-size: 2em;
@@ -27,18 +28,17 @@
   height: auto;
   width: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 100px;
   padding: 30px; }
 
 .input {
   background: rgba(255, 255, 255, 0.85);
-  border: 0;
+  border: 2px solid rgba(142, 130, 211, 0.8);
   border-radius: 5px;
   color: grey;
-  padding: 10px; }
-  .input:focus {
-    border: 2px solid rgba(142, 130, 211, 0.8); }
+  padding: 20px; }
 
 .submit_button {
   border: 0;
@@ -47,13 +47,20 @@
   margin-left: 30px;
   padding: 20px;
   transition: .5s;
-  background: linear-gradient(75deg, rgba(32, 178, 171, 0.85), rgba(142, 130, 211, 0.8)); }
+  background: linear-gradient(75deg, rgba(32, 178, 171, 0.85), rgba(142, 130, 211, 0.8));
+  width: 100px; }
   .submit_button:hover {
     box-shadow: 2px 4px rgba(255, 255, 255, 0.3);
     cursor: pointer; }
 
+.error_display {
+  border-radius: 5px;
+  color: red;
+  font-size: 12px;
+  margin-top: 20px; }
+
 .view_container {
-  background: rgba(255, 255, 255, 0.712);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   height: auto;
   padding: 20px;

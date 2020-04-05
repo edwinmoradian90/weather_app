@@ -35,13 +35,11 @@ class Initialize {
         this.weather.getInputValue();
         this.clearPage();
         this.weather.render();
-      } else
-      if (e.target.matches('.new_search_button')) {
-        this.resetPage();
+      } else if (e.target.matches('.new_search_button')) {
+        this.resetPage('.main_container');
         this.loadPage();
-      } else
-      if (e.target.matches('.toggle_units')) {
-        this.weather.resetPage();
+      } else if (e.target.matches('.toggle_units')) {
+        this.weather.resetPage('.main_container');
         this.weather.toggleUnits();
         this.weather.render();
       }

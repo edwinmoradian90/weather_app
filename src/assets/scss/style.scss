@@ -1,4 +1,5 @@
 $light_purple: rgba(142, 130, 211, 0.8);
+$white: rgba(255, 255, 255, 0.7);
 $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
 
 *,
@@ -17,10 +18,11 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
     justify-content: center;
     background: url('../images/mountains.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .title {
-    background: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     color: white;
     font-size: 2em;
@@ -33,6 +35,7 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
     height: auto;
     width: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-bottom: 100px;
     padding: 30px;
@@ -40,13 +43,10 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
 
 .input {
     background: rgba(255, 255, 255, 0.85);
-    border: 0;
+    border: 2px solid $light_purple;
     border-radius: 5px;
     color: grey;
-    padding: 10px;
-    &:focus {
-        border: 2px solid $light_purple;
-    }
+    padding: 20px;
 }
 
 .submit_button {
@@ -57,14 +57,22 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
     padding: 20px;
     transition: .5s;
     background: $grad;
+    width: 100px;
     &:hover {
         box-shadow: 2px 4px rgba(255, 255, 255, 0.3);
         cursor: pointer;
     }
 }
 
+.error_display {
+    border-radius: 5px;
+    color: red;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
 .view_container {
-    background: rgba(255, 255, 255, 0.712);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     height: auto;
     padding: 20px;
