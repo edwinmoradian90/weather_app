@@ -14,16 +14,23 @@ class Weather {
     this.inputValue = '';
     this.city = '';
     this.country = '';
+    this.type = '';
+    this.isCelsius = false;
+    this.unit = 'F';
     this.temp = 0;
-    this.minTemp = 0;
-    this.maxTemp = 0;
+    this.tempMin = 0;
+    this.tempMax = 0;
   }
 
   resetPage() {
-    const content = document.querySelector('#content');
+    const content = document.querySelector('.main_container');
     while (content.firstChild) {
       content.removeChild(content.firstChild);
     }
+  }
+
+  imagePicker() {
+
   }
 
   getInputValue() {
@@ -31,29 +38,34 @@ class Weather {
     this.inputValue = input.value;
   }
 
+  toggleUnits() {
+    this.isCelsius = !this.isCelsius;
+    this.unit = this.isCelsius
+      ? 'C'
+      : 'F';
+  }
+
+  toC(temps) {
+    const newTemp = temps.map((temp) => Math.floor(temp - 273));
+    [this.temp, this.tempMin, this.tempMax] = newTemp;
+  }
+
+  toF(temps) {
+    const newTemp = temps.map((temp) => Math.floor(((temp - 273) * (9 / 5)) + 32));
+    [this.temp, this.tempMin, this.tempMax] = newTemp;
+  }
+
   convertUnits(data) {
+    console.log(data);
     const { temp, temp_min, temp_max } = data.main;
     const info = [temp, temp_min, temp_max];
-
-    const newTemp = info.map(
-
-      (temp) => Math.floor(((temp - 273) * (9 / 5)) + 32),
-
-    );
-    [
-      this.temp,
-      this.minTemp,
-      this.maxTemp,
-    ] = [
-      `${newTemp[0]} F`,
-      `${newTemp[1]} F`,
-      `${newTemp[2]} F`,
-    ];
+    return this.isCelsius ? this.toC(info) : this.toF(info);
   }
 
   processData(data) {
     this.city = data.name;
     this.country = data.sys.country;
+    this.type = data.weather[0].main;
     this.convertUnits(data);
   }
 
@@ -74,13 +86,15 @@ class Weather {
     this.getWeather()
       .then((data) => {
         this.processData(data);
-        const weather = [
-          this.city,
-          this.country,
-          this.temp,
-          this.maxTemp,
-          this.minTemp,
-        ];
+        const weather = {
+          city: this.city,
+          country: this.country,
+          type: this.type,
+          temp: this.temp,
+          maxTemp: this.tempMax,
+          minTemp: this.tempMin,
+          unit: this.unit,
+        };
         weatherView(weather);
       }).catch((err) => {
         this.resetPage();

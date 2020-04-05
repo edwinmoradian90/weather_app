@@ -8,43 +8,71 @@ function weatherView(weather) {
   newSearch.classList.add('new_search_button');
   newSearch.innerText = 'Reset Search';
 
+  const toggleUnits = document.createElement('span');
+  toggleUnits.classList.add('toggle_units');
+  toggleUnits.innerText = 'Units';
+
   const weatherImageContainer = document.createElement('div');
   weatherImageContainer.classList.add('weather_image_container');
 
   const weatherImage = document.createElement('img');
   weatherImage.classList.add('weather_image');
 
+  const weatherInfo = `
+    <div class='location_container'>
+      <h2 class='location'>
+        ${weather.city}, ${weather.country}
+      </h2>
+      <h3 class='weather_type'>
+        ${weather.type}
+      </h3>
+      <div class='current_temp_container'>
+        <h1 class='current_temp'>
+        ${weather.temp}
+          <span>
+            ${weather.unit}
+          </span>
+        </h1>
+      </div>
+      <div class='min_max_container'>
+        <h3 class='min_temp'>
+          Min: ${weather.minTemp}
+          <span>
+            ${weather.unit}
+          </span>
+        </h3>
+        <h3 class='max_temp'>
+          Max: ${weather.maxTemp} 
+          <span>
+            ${weather.unit}
+          </span>
+        </h3>
+      </div>
+    </div>
+  `;
+
+  const buttonContainer = `
+    <div class='button_container'>
+      <div class='new_search_button'>
+        New Search
+      </div>
+      <div class='toggle_units'>
+        Toggle Units
+      </div>
+    </div>
+  `;
+
   const weatherInfoContainer = document.createElement('div');
   weatherInfoContainer.classList.add('weather_info_container');
 
-  const weatherInfo = document.createElement('ul');
-  weatherInfo.classList.add('weather_info');
+  const buttonWrapper = document.createElement('div');
+  buttonWrapper.classList.add('button_container');
+  buttonWrapper.innerHTML = buttonContainer;
 
-  const labels = [
-    'City',
-    'Country',
-    'Current Temperature',
-    'Max. Temperature',
-    'Min. Temperature',
-  ];
-  weather.forEach((item, i) => {
-    const li = document.createElement('li');
-    const label = document.createElement('h3');
-    const span = document.createElement('span');
-    li.classList.add('weather_item');
-    li.id = i;
-    label.innerText = labels[i];
-    span.innerText = item;
-    li.appendChild(label);
-    li.appendChild(span);
-    weatherInfo.appendChild(li);
-  });
-
-  weatherInfoContainer.appendChild(weatherInfo);
-  weatherImageContainer.appendChild(weatherImage);
+  weatherInfoContainer.innerHTML = weatherInfo;
   viewContainer.appendChild(weatherImageContainer);
   viewContainer.appendChild(weatherInfoContainer);
-  viewContainer.appendChild(newSearch);
+  viewContainer.appendChild(buttonWrapper);
   mainContainer.appendChild(viewContainer);
 }
 

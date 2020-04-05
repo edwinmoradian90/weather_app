@@ -53,17 +53,17 @@
     cursor: pointer; }
 
 .view_container {
-  background: rgba(255, 255, 255, 0.719);
+  background: white;
   border-radius: 10px;
-  height: auto;
+  height: 400px;
   padding: 20px;
-  width: 30vw; }
+  width: 400px; }
 
 .weather_info {
   align-items: left;
   display: flex;
-  flex-direction: column;
   list-style: none;
+  justify-content: space-evenly;
   margin-top: 20px;
   padding: 0 20px 0 20px; }
 
@@ -81,12 +81,31 @@
     margin-top: 10px;
     padding: 10px; }
 
+.button_container {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-around; }
+
 .new_search_button {
   background: linear-gradient(75deg, rgba(32, 178, 171, 0.85), rgba(142, 130, 211, 0.8));
   border-radius: 10px;
   color: white;
   padding: 20px;
-  transition: .3s; }
+  transition: .3s;
+  margin-right: 30px;
+  width: 100px; }
   .new_search_button:hover {
+    box-shadow: 2px 2px 2px rgba(142, 130, 211, 0.8);
+    cursor: pointer; }
+
+.toggle_units {
+  background: linear-gradient(75deg, rgba(32, 178, 171, 0.85), rgba(142, 130, 211, 0.8));
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  transition: .3s;
+  width: 100px;
+  cursor: pointer; }
+  .toggle_units:hover {
     box-shadow: 2px 2px 2px rgba(142, 130, 211, 0.8);
     cursor: pointer; }

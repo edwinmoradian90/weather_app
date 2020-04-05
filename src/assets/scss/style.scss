@@ -64,18 +64,18 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
 }
 
 .view_container {
-    background: rgba(255, 255, 255, 0.719);
+    background: rgb(255, 255, 255);
     border-radius: 10px;
-    height: auto;
+    height: 400px;
     padding: 20px;
-    width: 30vw;
+    width: 400px;
 }
 
 .weather_info {
     align-items: left;
     display: flex;
-    flex-direction: column;
     list-style: none;
+    justify-content: space-evenly;
     margin-top: 20px;
     padding: 0 20px 0 20px;
 }
@@ -97,12 +97,34 @@ $grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
     }
 }
 
+.button_container {
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-around;
+}
+
 .new_search_button {
     background: $grad;
     border-radius: 10px;
     color: white;
     padding: 20px;
     transition: .3s;
+    margin-right: 30px;
+    width: 100px;
+    &:hover {
+        box-shadow: 2px 2px 2px $light_purple;
+        cursor: pointer;
+    }
+}
+
+.toggle_units {
+    background: $grad;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    transition: .3s;
+    width: 100px;
+    cursor: pointer;
     &:hover {
         box-shadow: 2px 2px 2px $light_purple;
         cursor: pointer;

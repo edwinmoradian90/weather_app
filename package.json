@@ -17,7 +17,8 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "dev": "webpack --mode development --watch",
+    "start": "webpack-dev-server",
+    "dev": "webpack --mode development -w",
     "build": "webpack --mode production",
     "scss": "node-sass -w src/assets/scss -o src/assets/css"
   },
