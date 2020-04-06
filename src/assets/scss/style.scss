@@ -1,0 +1,152 @@
+$light_purple: rgba(142, 130, 211, 0.8);
+$white: rgba(255, 255, 255, 0.7);
+$grad: linear-gradient(75deg, rgba(32, 178, 171, 0.85), $light_purple);
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.main_container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/mountains.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title {
+    border-radius: 5px;
+    color: white;
+    font-size: 2em;
+    padding: 20px 60px;
+    position: absolute;
+    top: 20%;
+}
+
+.input_container {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 100px;
+    padding: 30px;
+}
+
+.input {
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid $light_purple;
+    border-radius: 5px;
+    color: grey;
+    padding: 20px;
+}
+
+.submit_button {
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    margin-left: 30px;
+    padding: 20px;
+    transition: .5s;
+    background: $grad;
+    width: 100px;
+    &:hover {
+        box-shadow: 2px 4px rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+    }
+}
+
+.error_display {
+    border-radius: 5px;
+    color: red;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.view_container {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    height: auto;
+    padding: 20px;
+    width: 400px;
+}
+
+.weather_info {
+    align-items: left;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    padding: 0 20px 0 20px;
+}
+
+.weather_item {
+    border-top: 1px solid rgba(32, 178, 171, 0.205);
+    padding: 17px; 
+    > h3 {
+        background: $grad;
+        border-radius: 5px;
+        color:white;
+        padding: 10px;
+    }
+    > span {
+        color: $light_purple;
+        display: block;
+        margin-top: 10px;
+        padding: 10px;
+    }
+}
+
+.location_container {
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.gif_container {
+    max-width: 40px;
+    height: 40px;
+    margin-right: 100px;
+}
+.button_container {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+}
+
+.new_search_button {
+    background: $grad;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    transition: .3s;
+    margin-right: 30px;
+    width: 100px;
+    &:hover {
+        box-shadow: 2px 2px 2px $light_purple;
+        cursor: pointer;
+    }
+}
+
+.toggle_units {
+    background: $grad;
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    transition: .3s;
+    width: 100px;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 2px 2px 2px $light_purple;
+        cursor: pointer;
+    }
+}
